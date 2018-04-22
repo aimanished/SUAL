@@ -13,7 +13,7 @@ import java.util.List;
 
 public class QuizDbHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "MyQuiz.db";
+    private static final String DATABASE_NAME = "MyQuiz5.db";
     private static final int DATABASE_VERSION = 2;
 
     private SQLiteDatabase db;
@@ -46,14 +46,16 @@ public class QuizDbHelper extends SQLiteOpenHelper {
     }
 
     public void fillQuestionsTable() {
-        Question q1 = new Question("A is correct", "B", "C ", "D", 1,"cow");
+        Question q1 = new Question("What animal is that?", "Cat", "Cow", "Dog", 2,"cow");
         addQuestion(q1);
-        Question q2 = new Question("A is correct", "B", "C ", "D", 1,"ronaldo");
+        Question q2 = new Question("This person is a football player. Whose voice is that?", "Messi", "Ronaldo ", "MO Salah", 2,"ronaldo");
         addQuestion(q2);
-        Question q3 = new Question("A is correct", "B", "C ", "D", 1,"rihanna");
+        Question q3 = new Question("This is a weird sound. What made that noise?", "Guitar", "balloon ", "fart", 1,"fart");
         addQuestion(q3);
-        Question q4 = new Question("A is correct", "B", "C ", "D", 1,"ed sheeran");
+        Question q4 = new Question("This is from a show called Spongebob. Whose character voice is it?", "Squidward", "Spongebob", "Patrick", 1,"spongebob");
         addQuestion(q4);
+        Question q5 = new Question("This is a singer. Whose voice is it?", "Ed Sheeran", "Sam Smith", "James Arthur", 1,"edsheeran");
+        addQuestion(q5);
     }
 
     private void addQuestion(Question question) {
@@ -63,6 +65,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         cv.put(QuestionsTable.COLUMN_OPTION2, question.getOption2());
         cv.put(QuestionsTable.COLUMN_OPTION3, question.getOption3());
         cv.put(QuestionsTable.COLUMN_ANSWER_NR, question.getAnswerNr());
+        cv.put(QuestionsTable.COLUMN_SOUND, question.getSound());
         db.insert(QuestionsTable.TABLE_NAME, null, cv);
     }
 

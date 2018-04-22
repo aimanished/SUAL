@@ -38,14 +38,16 @@
         android:id="@+id/sound"
         android:layout_width="wrap_content"
         android:layout_height="61dp"
-        android:layout_alignTop="@+id/rg"
-        android:layout_toStartOf="@+id/countdown"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="198dp"
+        android:layout_marginEnd="76dp"
         android:text="Play" />
 
     <TextView
         android:id="@+id/question_text"
         android:layout_width="match_parent"
-        android:layout_height="62dp"
+        android:layout_height="111dp"
         android:layout_above="@+id/sound"
         android:layout_centerHorizontal="true"
         android:text="THIS WILL BE THE QUESTION"
@@ -54,30 +56,32 @@
         android:textSize="20sp" />
 
     <RadioGroup
-        android:layout_centerVertical="true"
         android:id="@+id/rg"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/score"
+        android:layout_marginBottom="162dp">
 
         <RadioButton
             android:id="@+id/option1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="option1"/>
+            android:text="option1" />
 
 
         <RadioButton
             android:id="@+id/option2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="option2"/>
+            android:text="option2" />
 
         <RadioButton
             android:id="@+id/option3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="option3"/>
-</RadioGroup>
+            android:text="option3" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/confirm_next"
@@ -85,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="123dp"
+        android:layout_marginBottom="88dp"
         android:text="Confirm" />
 
 </RelativeLayout>
